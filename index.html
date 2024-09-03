@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un detalle especial para ti</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Contenedor del reproductor de YouTube -->
+    <div id="video-background-player" style="display: none;"></div>
+
+    <!-- Fondo Animado -->
+    <div class="fondo-particulas"></div>
+
+    <!-- Adornos decorativos -->
+    <div class="decoracion decoracion-1"></div>
+    <div class="decoracion decoracion-2"></div>
+    <div class="decoracion decoracion-3"></div>
+    <div class="decoracion decoracion-4"></div>
+
+    <!-- Sección de Bienvenida -->
+    <section id="bienvenida" class="seccion visible">
+        <div class="content">
+            <h1>Hola, Vivi</h1>
+            <p class="mensaje-bienvenida">Este detalle es para ti.</p>
+            <button id="btn-comenzar">Comienza aquí</button>
+        </div>
+    </section>
+
+    <!-- Sección de Imagen Interactiva -->
+    <section id="imagen-section" class="seccion oculto">
+        <div class="imagen-container">
+            <div id="mensajes">
+                <p id="mensaje1" class="mensaje oculto">Tus ojos tienen una luz especial.</p>
+                <p id="mensaje2" class="mensaje oculto">Tu sonrisa ilumina cada rincón.</p>
+                <p id="mensaje3" class="mensaje oculto">Hay una belleza única en tu mirada.</p>
+            </div>
+            <img src="imagen.png" id="imagen" alt="Imagen especial">
+        </div>
+    </section>
+
+    <!-- Sección de Agradecimiento -->
+    <section id="agradecimiento" class="seccion oculto">
+        <div class="content">
+            <h1>Gracias por compartir estos momentos, Vivi</h1>
+            <p>Tu presencia hace todo más bello.</p>
+            <p>Te aprecio más de lo que las palabras pueden expresar.</p>
+        </div>
+    </section>
+
+    <!-- Incluir el script de la API de YouTube y el script de manejo -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html>

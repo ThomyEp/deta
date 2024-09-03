@@ -1,0 +1,229 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+}
+
+.video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /* No permite la interacción con el video */
+}
+
+.fondo-particulas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(255, 99, 99, 0.1), rgba(255, 195, 160, 0.1));
+    animation: fondo-animado 15s ease-in-out infinite;
+    z-index: -1;
+    overflow: hidden;
+}
+
+@keyframes fondo-animado {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.decoracion {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.7;
+    background-color: rgba(255, 99, 99, 0.3);
+    animation: flotar 5s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.decoracion-1 {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    left: 15%;
+    background: radial-gradient(circle, rgba(255, 159, 159, 0.7), rgba(255, 99, 99, 0.3));
+    animation-duration: 6s;
+}
+
+.decoracion-2 {
+    width: 180px;
+    height: 180px;
+    top: 50%;
+    right: 10%;
+    background: radial-gradient(circle, rgba(255, 195, 160, 0.7), rgba(255, 99, 99, 0.3));
+    animation-duration: 8s;
+}
+
+.decoracion-3 {
+    width: 220px;
+    height: 220px;
+    bottom: 15%;
+    left: 50%;
+    background: radial-gradient(circle, rgba(255, 175, 189, 0.7), rgba(255, 99, 99, 0.3));
+    animation-duration: 7s;
+}
+
+.decoracion-4 {
+    width: 100px;
+    height: 100px;
+    top: 30%;
+    right: 30%;
+    background: radial-gradient(circle, rgba(255, 215, 215, 0.7), rgba(255, 99, 99, 0.3));
+    animation-duration: 9s;
+}
+
+.seccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.oculto {
+    opacity: 0;
+    transform: scale(1.1);
+    pointer-events: none;
+}
+
+.visible {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+}
+
+#bienvenida {
+    background: linear-gradient(135deg, rgba(255, 228, 225, 0.9) 0%, rgba(255, 195, 160, 0.9) 100%);
+    text-align: center;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+    animation: aparecer 2s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#bienvenida h1 {
+    font-size: 3rem;
+    color: #ff6363;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.mensaje-bienvenida {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#bienvenida button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: #ff6363;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#bienvenida button:hover {
+    transform: scale(1.1);
+    background-color: #ff4d4d;
+}
+
+.imagen-container {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+#imagen {
+    width: 50%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+.mensaje {
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    margin-bottom: 10px;
+    animation: mensaje-animacion 3s ease-out;
+}
+
+@keyframes mensaje-animacion {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.mensaje.visible {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+#agradecimiento p {
+    font-size: 1.2rem;
+    color: #333;
+}
